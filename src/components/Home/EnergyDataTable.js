@@ -1,10 +1,7 @@
 import React from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
-import {
-  Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography,
-} from '@material-ui/core';
+import { Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
 import { compose } from 'redux';
-import EnergyChart from './EnergyChart';
 import { withInfiniteScroll } from './withInfinitScroll';
 
 const styles = () => ({
@@ -14,6 +11,7 @@ const styles = () => ({
     margin: '24px 24px',
     minHeight: 600,
     width: 'calc(100% - 48px)',
+    overflow: 'scroll',
     borderRadius: '4px',
     boxShadow: '0 10px 10px 0 rgba(114, 131, 151, 0.05)',
     backgroundColor: 'white',
