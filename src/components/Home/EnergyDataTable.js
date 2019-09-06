@@ -11,7 +11,7 @@ const styles = () => ({
     margin: '24px 24px',
     minHeight: 600,
     width: 'calc(100% - 48px)',
-    overflowY: 'scroll',
+    overflowX: 'scroll',
     borderRadius: '4px',
     boxShadow: '0 10px 10px 0 rgba(114, 131, 151, 0.05)',
     backgroundColor: 'white',
