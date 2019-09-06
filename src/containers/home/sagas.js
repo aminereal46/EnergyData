@@ -12,13 +12,11 @@ import { DATA_LIST_PAGE_SIZE } from '../../config/constants';
 import { selectDataRowsNumber, selectFilter } from './selectors';
 
 function* getData(action: GetDataAction) {
-  console.log('get data saga');
   try {
     const filter = yield select(selectFilter);
     yield put(showLoader(action.type));
     let newStartRow;
     if (action.init) {
-      console.log('init');
       yield put(
         setData([], action.init),
       );
@@ -26,10 +24,8 @@ function* getData(action: GetDataAction) {
     } else {
       newStartRow = (yield select(selectDataRowsNumber)) + 1;
     }
-    console.log('111,', filter);
     const { data } = yield call(getRequest, endPoints.DataList(newStartRow, DATA_LIST_PAGE_SIZE,
       filter));
-    console.log('222');
     yield put(hideLoader(action.type));
     yield put(
       setData(data ? data.records : []),

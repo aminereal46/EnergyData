@@ -158,7 +158,6 @@ class Home extends React.Component <Props, State> {
     } else {
       selectedNature.push(...value);
       if (nature.length === selectedNature.length) {
-        console.log('all');
         this.setState((prev: State) => ({
           allNatureChecked: true,
           filter: {
