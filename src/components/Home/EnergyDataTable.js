@@ -1,12 +1,13 @@
 import React from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
+import {
+  Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography,
+} from '@material-ui/core';
 import { compose } from 'redux';
 import { withInfiniteScroll } from './withInfinitScroll';
 
 const styles = () => ({
   paper: {
-    display: 'flex',
     justifyContent: 'center',
     margin: '24px 24px',
     minHeight: 600,
@@ -27,7 +28,13 @@ class EnergyDataTable extends React.Component<Props> {
   render() {
     const { classes, data } = this.props;
     return (
-      <Paper className={classes.paper} style={{ alignItems: data.length === 0 ? 'center' : 'flex-start' }}>
+      <Paper
+        className={classes.paper}
+        style={{
+          alignItems: data.length === 0 ? 'center' : 'flex-start',
+          display: data.length === 0 ? 'flex' : 'inline-block',
+        }}
+      >
         { data.length === 0 ? (
           <Typography> Aucune donnée à afficher</Typography>) : (
             <Table className={classes.table}>
